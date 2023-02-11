@@ -1,11 +1,30 @@
 function Posts() {
+
+    const infoPosts = [
+        { fotoPerfil: "assets/img/meowed.svg", nomePerfil: "meowed", imagemPost: "assets/img/gato-telefone.svg", nomeImagemPost: "gato-telefone", curtidaPerfil: "9gag", imagemPerfilCurtida: "assets/img/9gag.svg", numCurtidas: "91.657" },
+        { fotoPerfil: "assets/img/barked.svg", nomePerfil: "barked", imagemPost: "assets/img/dog.svg", nomeImagemPost: "dog", curtidaPerfil: "meowed", imagemPerfilCurtida: "assets/img/meowed.svg", numCurtidas: "101.523" },
+        { fotoPerfil: "assets/img/9gag.svg", nomePerfil: "9gag", imagemPost: "assets/img/dog.svg", nomeImagemPost: "dog", curtidaPerfil: "barked", imagemPerfilCurtida: "assets/img/barked.svg", numCurtidas: "86.674" }
+    ]
+
     return (
         <div class="posts">
+            {infoPosts.map(m => 
+                <Post fotoPerfil={m.fotoPerfil} nomePerfil={m.nomePerfil}
+                    imagemPost={m.imagemPost} nomeImagemPost={m.nomeImagemPost}
+                    curtidaPerfil={m.curtidaPerfil} numCurtidas={m.numCurtidas}
+                    imagemPerfilCurtida={m.imagemPerfilCurtida} />
+            )}
+        </div>
+    )
+}
+
+function Post(props) {
+    return (
             <div data-test="post" class="post">
                 <div class="topo">
                     <div class="usuario">
-                        <img src="assets/img/meowed.svg" alt="meowed" />
-                        meowed
+                    <img src={props.fotoPerfil} alt={props.nomePerfil} />
+                        {props.nomePerfil}
                     </div>
                     <div class="acoes">
                         <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -13,7 +32,7 @@ function Posts() {
                 </div>
 
                 <div class="conteudo">
-                    <img data-test="post-image" src="assets/img/gato-telefone.svg" alt="gato-telefone" />
+                    <img data-test="post-image" src={props.imagemPost} alt={props.nomeImagemPost} />
                 </div>
 
                 <div class="fundo">
@@ -29,51 +48,75 @@ function Posts() {
                     </div>
 
                     <div class="curtidas">
-                        <img src="assets/img/respondeai.svg" alt="respondeai" />
+                        <img src={props.imagemPerfilCurtida} alt={props.curtidaPerfil} />
                         <div data-test="likes-number" class="texto">
-                            Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
+                            Curtido por <strong>{props.curtidaPerfil}</strong> e <strong>outras {props.numCurtidas} pessoas</strong>
                         </div>
                     </div>
                 </div>
             </div>
+    )
+}
 
-            <div data-test="post" class="post">
-                <div class="topo">
-                    <div class="usuario">
-                        <img src="assets/img/barked.svg" alt="barked" />
-                        barked
-                    </div>
-                    <div class="acoes">
-                        <ion-icon name="ellipsis-horizontal"></ion-icon>
-                    </div>
-                </div>
+/*
 
-                <div class="conteudo">
-                    <img data-test="post-image" src="assets/img/dog.svg" alt="dog" />
-                </div>
-
-                <div class="fundo">
-                    <div class="acoes">
-                        <div>
-                            <ion-icon name="heart-outline"></ion-icon>
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                            <ion-icon name="paper-plane-outline"></ion-icon>
-                        </div>
-                        <div>
-                            <ion-icon name="bookmark-outline"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="curtidas">
-                        <img src="assets/img/adorable_animals.svg" alt="adorable_animals" />
-                        <div data-test="likes-number" class="texto">
-                            Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                        </div>
-                    </div>
-                </div>
+function Topo() {
+    return (
+        <div class="topo">
+            <div class="usuario">
+                <img src="assets/img/barked.svg" alt="barked" />
+                barked
+            </div>
+            <div class="acoes">
+                <ion-icon name="ellipsis-horizontal"></ion-icon>
             </div>
         </div>
     )
 }
+
+function Conteudo() {
+    return (
+        <div class="conteudo">
+            <img data-test="post-image" src="assets/img/dog.svg" alt="dog" />
+        </div>
+    )
+}
+
+function Fundo() {
+    return (
+        <div class="fundo">
+            <Acoes />
+            <Curtidas />
+        </div>
+    )
+}
+
+function Acoes() {
+    return (
+        <div class="acoes">
+            <div>
+                <ion-icon name="heart-outline"></ion-icon>
+                <ion-icon name="chatbubble-outline"></ion-icon>
+                <ion-icon name="paper-plane-outline"></ion-icon>
+            </div>
+            <div>
+                <ion-icon name="bookmark-outline"></ion-icon>
+            </div>
+        </div>
+    )
+}
+
+function Curtidas() {
+    return (
+        <div class="curtidas">
+            <img src="assets/img/adorable_animals.svg" alt="adorable_animals" />
+            <div data-test="likes-number" class="texto">
+                Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
+            </div>
+        </div>
+    )
+}
+
+*/
 
 export default Posts
