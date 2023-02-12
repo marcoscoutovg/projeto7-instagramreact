@@ -2,10 +2,10 @@ import { useState } from "react"
 
 function Usuario() {
 
-    const infoUsuario = { 
-        imagem: "assets/img/catanacomics.svg", 
-        altImg: "imagem de perfil", 
-        nomePerfil: "catanacomics" 
+    const infoUsuario = {
+        imagem: "assets/img/catanacomics.svg",
+        altImg: "imagem de perfil",
+        nomePerfil: "catanacomics"
     };
 
     return (

@@ -3,9 +3,15 @@ import { useState } from "react"
 function Posts() {
 
     const infoPosts = [
-        { fotoPerfil: "assets/img/meowed.svg", nomePerfil: "meowed", imagemPost: "assets/img/gato-telefone.svg", nomeImagemPost: "gato-telefone", curtidaPerfil: "9gag", imagemPerfilCurtida: "assets/img/9gag.svg", numCurtidas: 91657 },
-        { fotoPerfil: "assets/img/barked.svg", nomePerfil: "barked", imagemPost: "assets/img/dog.svg", nomeImagemPost: "dog", curtidaPerfil: "meowed", imagemPerfilCurtida: "assets/img/meowed.svg", numCurtidas: 101523 },
-        { fotoPerfil: "assets/img/9gag.svg", nomePerfil: "9gag", imagemPost: "assets/img/dog.svg", nomeImagemPost: "dog", curtidaPerfil: "barked", imagemPerfilCurtida: "assets/img/barked.svg", numCurtidas: 86784 }
+        { fotoPerfil: "assets/img/meowed.svg", nomePerfil: "meowed", imagemPost: "assets/img/gato-telefone.svg", 
+        nomeImagemPost: "gato-telefone", curtidaPerfil: "9gag", imagemPerfilCurtida: "assets/img/9gag.svg", numCurtidas: 91657 
+        },
+        { fotoPerfil: "assets/img/barked.svg", nomePerfil: "barked", imagemPost: "assets/img/dog.svg", 
+        nomeImagemPost: "dog", curtidaPerfil: "meowed", imagemPerfilCurtida: "assets/img/meowed.svg", numCurtidas: 101523 
+        },
+        { fotoPerfil: "assets/img/9gag.svg", nomePerfil: "9gag", imagemPost: "assets/img/dog.svg", 
+        nomeImagemPost: "dog", curtidaPerfil: "barked", imagemPerfilCurtida: "assets/img/barked.svg", numCurtidas: 86784 
+        }
     ];
 
     return (
@@ -22,12 +28,14 @@ function Posts() {
 
 function Post(props) {
 
-    const [heart, setHeart] = useState("heart-outline");
+    const contornoHeart = "heart-outline";
+
+    const [heart, setHeart] = useState(contornoHeart);
     const [cor, setCor] = useState('preta');
     const [totalCurtidas, setTotalCurtidas] = useState(Intl.NumberFormat("pt-BR").format(props.numCurtidas));
 
     function curtirImagem() {
-        if (heart === "heart-outline") {
+        if (heart === contornoHeart) {
             setHeart("heart");
             setCor('vermelha');
             setTotalCurtidas(Intl.NumberFormat("pt-BR").format(props.numCurtidas + 1));
@@ -35,12 +43,12 @@ function Post(props) {
     }
 
     function curtir() {
-        if (heart === "heart-outline") {
+        if (heart === contornoHeart) {
             setHeart("heart");
             setCor('vermelha');
             setTotalCurtidas(Intl.NumberFormat("pt-BR").format(props.numCurtidas + 1));
         } else {
-            setHeart("heart-outline");
+            setHeart(contornoHeart);
             setCor('preta');
             setTotalCurtidas(Intl.NumberFormat("pt-BR").format(props.numCurtidas));
         }
@@ -83,17 +91,17 @@ function Post(props) {
     );
 }
 
-function SalvarPost(props) {
+function SalvarPost() {
 
-    const [icon, setIcon] = useState("bookmark-outline");
+    const contornoIcon = "bookmark-outline";
+
+    const [icon, setIcon] = useState(contornoIcon);
 
     function salvar() {
-        if (icon === "bookmark-outline") {
-            const novoIcon = "bookmark";
-            setIcon(novoIcon);
+        if (icon === contornoIcon) {
+            setIcon("bookmark");
         } else {
-            const novoIcon = "bookmark-outline";
-            setIcon(novoIcon);
+            setIcon(contornoIcon);
         }
     }
 
