@@ -74,8 +74,8 @@ function Post(props) {
 
                 <div class="curtidas">
                     <img src={props.imagemPerfilCurtida} alt={props.curtidaPerfil} />
-                    <div data-test="likes-number" class="texto">
-                        Curtido por <strong>{props.curtidaPerfil}</strong> e <strong data-test="likes-number" >outras {totalCurtidas} pessoas</strong>
+                    <div class="texto">
+                        Curtido por <strong>{props.curtidaPerfil}</strong> e <strong data-test="likes-number">outras {totalCurtidas} pessoas</strong>
                     </div>
                 </div>
             </div>
