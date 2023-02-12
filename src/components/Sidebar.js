@@ -9,7 +9,7 @@ function Sidebar() {
             <Links />
             <Copyright />
         </div>
-    )
+    );
 }
 
 function Links() {
@@ -18,8 +18,7 @@ function Links() {
             Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
             Hashtags • Idioma
         </div>
-
-    )
+    );
 }
 
 function Copyright() {
@@ -27,7 +26,7 @@ function Copyright() {
         <div class="copyright">
             © 2021 INSTAGRAM DO FACEBOOK
         </div>
-    )
+    );
 }
 
 export default Sidebar

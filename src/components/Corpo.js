@@ -12,7 +12,7 @@ function Corpo() {
 
             <Sidebar />
         </div>
-    )
+    );
 } 
 
 export default Corpo

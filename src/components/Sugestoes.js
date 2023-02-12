@@ -6,7 +6,7 @@ function Sugestoes() {
         { imagem: "assets/img/razoesparaacreditar.svg", nome: "razoesparaacreditar", razao: "Novo no Instagram" },
         { imagem: "assets/img/adorable_animals.svg", nome: "adorable_animals", razao: "Segue você" },
         { imagem: "assets/img/smallcutecats.svg", nome: "smallcutecats", razao: "Segue você" }
-    ]
+    ];
 
     return (
         <div class="sugestoes">
@@ -14,7 +14,7 @@ function Sugestoes() {
             {infoSugestoes.map(m => <Sugestao imagem={m.imagem} nome={m.nome} razao={m.razao} />)}
 
         </div>
-    )
+    );
 }
 
 function Sugestao(props) {
@@ -30,7 +30,7 @@ function Sugestao(props) {
 
             <div class="seguir">Seguir</div>
         </div>
-    )
+    );
 }
 
 function Titulo() {
@@ -39,7 +39,7 @@ function Titulo() {
             Sugestões para você
             <div>Ver tudo</div>
         </div>
-    )
+    );
 }
 
 export default Sugestoes

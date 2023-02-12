@@ -1,8 +1,5 @@
 import Navbar from "./Navbar";
 import Corpo from "./Corpo";
-import Posts from "./Posts";
-import Usuario from "./Usuario";
-import Sugestoes from "./Sugestoes";
 
 export default function App() {
     return (
@@ -13,6 +10,3 @@ export default function App() {
         </div>
     );
 }
-
-
-// tira a tag corpo que renderiza o navbar

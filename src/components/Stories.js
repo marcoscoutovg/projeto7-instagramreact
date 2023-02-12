@@ -9,14 +9,14 @@ function Stories() {
         { imagem: "assets/img/respondeai.svg", usuario: "respondeai" },
         { imagem: "assets/img/filomoderna.svg", usuario: "filomoderna" },
         { imagem: "assets/img/memeriagourmet.svg", usuario: "memeriagourmet" },
-    ]
+    ];
 
     return (
         <div class="stories">
             {infoStories.map(m => <Story imagem={m.imagem} usuario={m.usuario} />)}
             <Setinha />
         </div>
-    )
+    );
 }
 
 function Story(props) {
@@ -29,7 +29,7 @@ function Story(props) {
                 {props.usuario}
             </div>
         </div>
-    )
+    );
 }
 
 function Setinha() {
@@ -37,7 +37,7 @@ function Setinha() {
         <div class="setinha">
             <ion-icon name="chevron-forward-circle"></ion-icon>
         </div>
-    )
+    );
 }
 
 export default Stories
