@@ -3,7 +3,7 @@ import Sugestoes from "./Sugestoes";
 
 function Sidebar() {
     return (
-        <div class="sidebar">
+        <div className="sidebar">
             <Usuario />
             <Sugestoes />
             <Links />
@@ -14,7 +14,7 @@ function Sidebar() {
 
 function Links() {
     return (
-        <div class="links">
+        <div className="links">
             Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes •
             Hashtags • Idioma
         </div>
@@ -23,7 +23,7 @@ function Links() {
 
 function Copyright() {
     return (
-        <div class="copyright">
+        <div className="copyright">
             © 2021 INSTAGRAM DO FACEBOOK
         </div>
     );

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 function Usuario() {
 
@@ -37,9 +37,9 @@ function User(props) {
     }
 
     return (
-        <div class="usuario">
+        <div className="usuario">
             <img onClick={trocarFoto} data-test="profile-image" src={fotoPerfil} alt={props.altImg} />
-            <div class="texto">
+            <div className="texto">
                 <span>
                     <strong data-test="name">{nomePerfil}</strong>
                     <ion-icon onClick={trocarUsuario} data-test="edit-name" name="pencil"></ion-icon>

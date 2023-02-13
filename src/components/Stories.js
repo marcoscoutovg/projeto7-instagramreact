@@ -12,8 +12,8 @@ function Stories() {
     ];
 
     return (
-        <div class="stories">
-            {infoStories.map(m => <Story imagem={m.imagem} usuario={m.usuario} />)}
+        <div className="stories">
+            {infoStories.map(m => <Story key={m.usuario} imagem={m.imagem} usuario={m.usuario} />)}
             <Setinha />
         </div>
     );
@@ -21,11 +21,11 @@ function Stories() {
 
 function Story(props) {
     return (
-        <div class="story">
-            <div class="imagem">
+        <div className="story">
+            <div className="imagem">
                 <img src={props.imagem} alt={props.usuario} />
             </div>
-            <div class="usuario">
+            <div className="usuario">
                 {props.usuario}
             </div>
         </div>
@@ -34,7 +34,7 @@ function Story(props) {
 
 function Setinha() {
     return (
-        <div class="setinha">
+        <div className="setinha">
             <ion-icon name="chevron-forward-circle"></ion-icon>
         </div>
     );

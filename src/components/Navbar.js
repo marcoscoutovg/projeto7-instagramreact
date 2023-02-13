@@ -1,6 +1,6 @@
 function Navbar() {
     return (
-        <div class="navbar">
+        <div className="navbar">
             <Container />
         </div>
     );
@@ -8,7 +8,7 @@ function Navbar() {
 
 function Container() {
     return (
-        <div class="container">
+        <div className="container">
             <Logo />
             <Pesquisa />
             <Icones />
@@ -19,9 +19,9 @@ function Container() {
 
 function Logo () {
     return (
-        <div class="logo">
+        <div className="logo">
             <ion-icon name="logo-instagram"></ion-icon>
-            <div class="separador"></div>
+            <div className="separador"></div>
             <img src="assets/img/logo.png" alt="logo"/>
         </div>
     );
@@ -29,7 +29,7 @@ function Logo () {
 
 function Pesquisa() {
     return (
-        <div class="pesquisa">
+        <div className="pesquisa">
             <input type="text" placeholder="Pesquisar" />
         </div>
     );
@@ -37,7 +37,7 @@ function Pesquisa() {
 
 function Icones() {
     return (
-        <div class="icones">
+        <div className="icones">
             <ion-icon name="paper-plane-outline"></ion-icon>
             <ion-icon name="compass-outline"></ion-icon>
             <ion-icon name="heart-outline"></ion-icon>
@@ -48,7 +48,7 @@ function Icones() {
 
 function IconesMobile() {
     return (
-        <div class="icones-mobile">
+        <div className="icones-mobile">
             <ion-icon name="paper-plane-outline"></ion-icon>
         </div>
     );

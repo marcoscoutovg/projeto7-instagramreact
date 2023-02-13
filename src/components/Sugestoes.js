@@ -9,9 +9,9 @@ function Sugestoes() {
     ];
 
     return (
-        <div class="sugestoes">
+        <div className="sugestoes">
             <Titulo />
-            {infoSugestoes.map(m => <Sugestao imagem={m.imagem} nome={m.nome} razao={m.razao} />)}
+            {infoSugestoes.map(m => <Sugestao key={m.nome} imagem={m.imagem} nome={m.nome} razao={m.razao} />)}
 
         </div>
     );
@@ -19,23 +19,23 @@ function Sugestoes() {
 
 function Sugestao(props) {
     return (
-        <div class="sugestao">
-            <div class="usuario">
+        <div className="sugestao">
+            <div className="usuario">
                 <img src={props.imagem} alt={props.nome} />
-                <div class="texto">
-                    <div class="nome">{props.nome}</div>
-                    <div class="razao">{props.razao}</div>
+                <div className="texto">
+                    <div className="nome">{props.nome}</div>
+                    <div className="razao">{props.razao}</div>
                 </div>
             </div>
 
-            <div class="seguir">Seguir</div>
+            <div className="seguir">Seguir</div>
         </div>
     );
 }
 
 function Titulo() {
     return (
-        <div class="titulo">
+        <div className="titulo">
             Sugestões para você
             <div>Ver tudo</div>
         </div>

@@ -1,23 +1,23 @@
-import { useState } from "react"
+import { useState } from "react";
 
 function Posts() {
 
     const infoPosts = [
-        { fotoPerfil: "assets/img/meowed.svg", nomePerfil: "meowed", imagemPost: "assets/img/gato-telefone.svg", 
-        nomeImagemPost: "gato-telefone", curtidaPerfil: "9gag", imagemPerfilCurtida: "assets/img/9gag.svg", numCurtidas: 91657 
+        { fotoPerfil: "assets/img/meowed.svg", nomePerfil: "meowed", imagemPost: "assets/img/gato-telefone.svg",
+        nomeImagemPost: "gato-telefone", curtidaPerfil: "9gag", imagemPerfilCurtida: "assets/img/9gag.svg", numCurtidas: 91657
         },
-        { fotoPerfil: "assets/img/barked.svg", nomePerfil: "barked", imagemPost: "assets/img/dog.svg", 
-        nomeImagemPost: "dog", curtidaPerfil: "meowed", imagemPerfilCurtida: "assets/img/meowed.svg", numCurtidas: 101523 
+        { fotoPerfil: "assets/img/barked.svg", nomePerfil: "barked", imagemPost: "assets/img/dog.svg",
+        nomeImagemPost: "dog", curtidaPerfil: "meowed", imagemPerfilCurtida: "assets/img/meowed.svg", numCurtidas: 101523
         },
-        { fotoPerfil: "assets/img/9gag.svg", nomePerfil: "9gag", imagemPost: "assets/img/dog.svg", 
-        nomeImagemPost: "dog", curtidaPerfil: "barked", imagemPerfilCurtida: "assets/img/barked.svg", numCurtidas: 86784 
+        { fotoPerfil: "assets/img/9gag.svg", nomePerfil: "9gag", imagemPost: "assets/img/dog.svg",
+        nomeImagemPost: "dog", curtidaPerfil: "barked", imagemPerfilCurtida: "assets/img/barked.svg", numCurtidas: 86784
         }
     ];
 
     return (
-        <div class="posts">
+        <div className="posts">
             {infoPosts.map(m =>
-                <Post fotoPerfil={m.fotoPerfil} nomePerfil={m.nomePerfil}
+                <Post key={m.nomePerfil} fotoPerfil={m.fotoPerfil} nomePerfil={m.nomePerfil}
                     imagemPost={m.imagemPost} nomeImagemPost={m.nomeImagemPost}
                     curtidaPerfil={m.curtidaPerfil} numCurtidas={m.numCurtidas}
                     imagemPerfilCurtida={m.imagemPerfilCurtida} />
@@ -55,34 +55,34 @@ function Post(props) {
     }
 
     return (
-        <div data-test="post" class="post">
-            <div class="topo">
-                <div class="usuario">
+        <div data-test="post" className="post">
+            <div className="topo">
+                <div className="usuario">
                     <img src={props.fotoPerfil} alt={props.nomePerfil} />
                     {props.nomePerfil}
                 </div>
-                <div class="acoes">
+                <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
 
-            <div class="conteudo">
+            <div className="conteudo">
                 <img onClick={curtirImagem} data-test="post-image" src={props.imagemPost} alt={props.nomeImagemPost} />
             </div>
 
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
                         <ion-icon data-test="like-post" onClick={curtir} class={cor} name={heart}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
-                    <SalvarPost name="bookmark-outline" class="preta" />
+                    <SalvarPost name="bookmark-outline" className="preta" />
                 </div>
 
-                <div class="curtidas">
+                <div className="curtidas">
                     <img src={props.imagemPerfilCurtida} alt={props.curtidaPerfil} />
-                    <div class="texto">
+                    <div className="texto">
                         Curtido por <strong>{props.curtidaPerfil}</strong> e <strong data-test="likes-number">outras {totalCurtidas} pessoas</strong>
                     </div>
                 </div>
